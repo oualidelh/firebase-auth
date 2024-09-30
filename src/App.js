@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import SignUp from "./account/SignUp";
+import Login from "./account/Login";
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+import { useEffect } from "react";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 function App() {
+  useEffect(() => {
+    M.AutoInit();
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Home />
+      <SignUp />
+      <Login />
     </div>
   );
 }
